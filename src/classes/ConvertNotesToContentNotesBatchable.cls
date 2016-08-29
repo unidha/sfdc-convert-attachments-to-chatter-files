@@ -139,7 +139,7 @@ public with sharing class ConvertNotesToContentNotesBatchable implements Databas
             // but we can update the generated ContentVersion record with original owner id later
             contentNotes.add( new ContentNote(
                 title = note.title,
-                content = Blob.valueOf( ( note.body == null ) ? '' : note.body )
+                content = Blob.valueOf( ( note.body == null ) ? '' : note.body.escapeHTML4()  )
             ));
 
         }
